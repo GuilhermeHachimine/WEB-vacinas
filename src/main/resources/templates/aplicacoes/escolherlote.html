@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Controle de Vacinação</title>
+</head>
+<body>
+	<h1>Controle de Vacinação</h1>
+	
+	<p th:text="${pessoa.nome}"></p>
+	<p th:text="${pessoa.cpf}"></p>
+	<p th:text="${{pessoa.dataNascimento}}"></p>
+	<p th:text="${pessoa.profissao.nome}"></p>
+	<p th:text="${vacina.nome}"></p>
+	
+	<form th:action="@{/aplicacoes/cadastrar}" method="post">
+		<input type="hidden" name="pessoa.codigo" th:value="${pessoa.codigo}">
+		<input type="hidden" name="pessoa.nome" th:value="${pessoa.nome}">
+		<input type="hidden" name="pessoa.cpf" th:value="${pessoa.cpf}">
+		<input type="hidden" name="pessoa.dataNascimento" th:value="${{pessoa.dataNascimento}}">
+		<input type="hidden" name="pessoa.profissao.codigo" th:value="${pessoa.profissao.codigo}">
+		<input type="hidden" name="pessoa.profissao.nome" th:value="${pessoa.profissao.nome}">
+		<label for="lote">Lote:</label>
+		<select id="lote" name="lote">
+			<option th:each="l : ${lotes}" 
+			th:value="${l.codigo}" 
+			th:text="${l.codigo + '-' + l.validade + '-' + l.nroDosesAtual}"></option>
+		</select>
+		<input type="submit" value="Salvar Aplicação">
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Controle de Vacinação</title>
+</head>
+<body>
+	<h1>Controle de Vacinação</h1>
+	
+	<form th:action="@{/lotes/inserir}" method="get">
+		<input type="submit" value="Inserir Lote">
+	</form>
+	
+	<form th:action="@{/lotes/pesquisar}" method="get">
+		<input type="submit" value="Pesquisar Lotes">
+	</form>
+	
+	<form th:action="@{/aplicacoes/escolherpessoa}" method="get">
+		<input type="submit" value="Cadastrar Aplicação">
+	</form>
+	
+</body>
+</html>
+
+
+

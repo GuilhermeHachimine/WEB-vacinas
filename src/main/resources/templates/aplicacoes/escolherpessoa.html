@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Controle de Vacinação</title>
+</head>
+<body>
+	<h1>Controle de Vacinação</h1>
+	
+	<form th:action="@{/aplicacoes/escolhervacina}" method="post">
+		<label for="cpf">CPF:</label>
+		<input type="text" id="cpf" name="cpf">
+		<br> 
+		<input type="submit" value="Buscar">
+	</form>
+	
+</body>
+</html>
